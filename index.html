@@ -1,0 +1,1136 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>VantageCoops - Run your cooperative the smart way</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;1,400&display=swap"
+      rel="stylesheet"
+    />
+    <script>
+      tailwind.config = {
+        theme: {
+          extend: {
+            colors: {
+              brand: "#2132C7", // Royal blue used for buttons and highlights
+              brandHover: "#1A28A1",
+              surface: "#F8FAFC", // Very light blue/gray for backgrounds
+              textDark: "#111827",
+              textMuted: "#6B7280",
+            },
+            fontFamily: {
+              sans: ["Inter", "sans-serif"],
+              serif: ["Playfair Display", "serif"],
+            },
+            backgroundImage: {
+              "gradient-radial": "radial-gradient(var(--tw-gradient-stops))",
+            },
+          },
+        },
+      };
+    </script>
+    <style>
+      body {
+        background-color: #ffffff;
+      }
+      .hero-bg {
+        background:
+          radial-gradient(circle at top right, #f0f4ff 0%, transparent 40%),
+          radial-gradient(circle at bottom left, #f0f4ff 0%, transparent 40%);
+      }
+      .gradient {
+        background: linear-gradient(180deg, #4656f6 0%, #0107a3 100%);
+        border: 1px solid #ffffff;
+        border-radius: 6px;
+      }
+      .ellipse-bg {
+        position: absolute;
+        width: min(1440px, 100%);
+        height: 396px;
+        left: 50%;
+        transform: translateX(-50%);
+        background: linear-gradient(180deg, rgba(70, 86, 246, 0.1) 0%, rgba(1, 7, 163, 0.1) 100%);
+        filter: blur(150px);
+        pointer-events: none;
+        z-index: 0;
+        border-radius: 50%;
+      }
+      /* Toast animation */
+      @keyframes slideInUp {
+        from { transform: translateY(100px); opacity: 0; }
+        to   { transform: translateY(0);    opacity: 1; }
+      }
+      @keyframes slideOutDown {
+        from { transform: translateY(0);    opacity: 1; }
+        to   { transform: translateY(100px); opacity: 0; }
+      }
+      .toast-enter { animation: slideInUp 0.35s ease forwards; }
+      .toast-exit  { animation: slideOutDown 0.35s ease forwards; }
+    </style>
+  </head>
+  <body class="font-sans text-textDark antialiased" style="position: relative; overflow-x: hidden;">
+
+    <!-- Decorative background ellipses -->
+    <!-- Ellipse 1: near top / hero area -->
+    <div class="ellipse-bg" style="top: 200px;"></div>
+    <!-- Ellipse 2: mid-page around features section -->
+    <div class="ellipse-bg" style="top: 1200px;"></div>
+    <!-- Ellipse 3: lower-mid around how it works / testimonials -->
+    <div class="ellipse-bg" style="top: 2400px;"></div>
+    <!-- Ellipse 4: near bottom / CTA + FAQ area -->
+    <div class="ellipse-bg" style="top: 3600px;"></div>
+    <!-- Navigation -->
+    <nav
+      class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-6 flex items-center justify-between"
+    >
+      <div class="flex items-center">
+        <!-- Logo Image Placeholder -->
+        <img
+          src="./logo.svg"
+          alt="VantageCoops Logo"
+          class="h-15 w-auto rounded object-contain"
+        />
+      </div>
+      <div
+        class="hidden md:flex items-center space-x-8 text-base font-medium text-gray-500"
+      >
+        <a href="#" class="hover:text-textDark transition">Features</a>
+        <a href="#" class="hover:text-textDark transition">For Who?</a>
+        <a href="#" class="hover:text-textDark transition">How it Works</a>
+        <a href="#" class="hover:text-textDark transition">Why Vantage Coops</a>
+        <a href="#" class="hover:text-textDark transition">FAQs</a>
+      </div>
+      <div class="flex items-center space-x-4">
+        <a
+          href="#"
+          class="hidden md:inline-flex items-center justify-center px-6 py-2.5 gradient text-white text-base font-medium rounded-md hover:from-brandHover hover:to-[#3b4ccc] transition"
+        >
+          Login
+        </a>
+        <a
+          href="#"
+          class="inline-flex items-center justify-center px-6 py-2.5 border border-brand text-brand text-base font-medium rounded-md hover:bg-blue-50 transition"
+        >
+          Sign Up
+        </a>
+      </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="relative pt-16 pb-24 overflow-hidden bg-white">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+          <!-- Hero Content -->
+          <div class="max-w-xl">
+            <div
+              class="inline-flex items-center px-4 py-2.5 rounded-full border border-grey-200 bg-grey-50 text-[#C47D0E] text-xs font-semibold tracking-wide mb-8"
+            >
+              Trusted by Cooperatives & Investment Organizations
+            </div>
+            <h1
+              class="text-[48px] font-serif font-medium leading-[1.1] text-textDark mb-6"
+            >
+              Run your <span class="text-brand">cooperative</span><br />the
+              smart way.
+            </h1>
+            <p class="text-base text-textMuted mb-10 leading-relaxed max-w-lg">
+              One platform for savings, loans, investments, and member
+              management.
+            </p>
+            <div class="flex flex-wrap items-center gap-4">
+              <button
+                class="px-8 py-3.5 gradient text-white font-medium rounded-md transition shadow-sm"
+              >
+                Get Started
+              </button>
+              <button
+                onclick="openModal()"
+                class="px-8 py-3.5 border border-gray-300 text-gray-700 bg-white font-medium rounded-md hover:bg-gray-50 transition shadow-sm"
+              >
+                Book a Demo
+              </button>
+            </div>
+          </div>
+          <!-- Hero Image -->
+          <div
+            class="relative w-full h-[400px] lg:h-[600px] flex items-center justify-center"
+          >
+            <!-- Placeholder for the main illustration -->
+            <img
+              src="./hero.svg"
+              alt="Hero Illustration"
+              class="absolute inset-0 w-full h-full object-contain"
+            />
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Features Section -->
+    <section class="py-24 bg-white">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="text-center mb-16">
+          <h2 class="text-[48px] font-serif font-medium mb-4">Our Features</h2>
+          <p class="text-base text-textMuted">
+            Everything you need to run a modern cooperative.
+          </p>
+        </div>
+
+        <div
+          class="flex flex-wrap justify-center gap-4 md:gap-6 max-w-5xl mx-auto"
+        >
+          <!-- Feature Pills -->
+          <div
+            class="flex items-center space-x-3 bg-white px-6 md:px-8 py-4 rounded-full shadow-[0_2px_10px_rgba(0,0,0,0.04)] border border-gray-100 hover:shadow-md transition"
+          >
+            <img
+              src="./Special Investment.gif"
+              alt="Icon"
+              class="w-10 h-10 bg-gray-100 rounded"
+            />
+            <span class="font-semibold text-gray-900 text-lg"
+              >Special Investment</span
+            >
+          </div>
+          <div
+            class="flex items-center space-x-3 bg-white px-6 md:px-8 py-4 rounded-full shadow-[0_2px_10px_rgba(0,0,0,0.04)] border border-gray-100 hover:shadow-md transition"
+          >
+            <img
+              src="./Target Savvings.gif"
+              alt="Icon"
+              class="w-10 h-10 bg-gray-100 rounded"
+            />
+            <span class="font-semibold text-gray-900 text-lg"
+              >Target Savings</span
+            >
+          </div>
+          <div
+            class="flex items-center space-x-3 bg-white px-6 md:px-8 py-4 rounded-full shadow-[0_2px_10px_rgba(0,0,0,0.04)] border border-gray-100 hover:shadow-md transition"
+          >
+            <img
+              src="./contribution.gif"
+              alt="Icon"
+              class="w-10 h-10 bg-gray-100 rounded"
+            />
+            <span class="font-semibold text-gray-900 text-lg"
+              >Contributions</span
+            >
+          </div>
+
+          <div
+            class="flex items-center space-x-3 bg-white px-6 md:px-8 py-4 rounded-full shadow-[0_2px_10px_rgba(0,0,0,0.04)] border border-gray-100 hover:shadow-md transition"
+          >
+            <img
+              src="./wallet.gif"
+              alt="Icon"
+              class="w-10 h-10 bg-gray-100 rounded"
+            />
+            <span class="font-semibold text-gray-900 text-lg"
+              >Wallet System</span
+            >
+          </div>
+          <div
+            class="flex items-center space-x-3 bg-white px-6 md:px-8 py-4 rounded-full shadow-[0_2px_10px_rgba(0,0,0,0.04)] border border-gray-100 hover:shadow-md transition"
+          >
+            <img
+              src="./Airtime.gif"
+              alt="Icon"
+              class="w-10 h-10 bg-gray-100 rounded"
+            />
+            <span class="font-semibold text-gray-900 text-lg"
+              >Airtime & Data</span
+            >
+          </div>
+          <div
+            class="flex items-center space-x-3 bg-white px-6 md:px-8 py-4 rounded-full shadow-[0_2px_10px_rgba(0,0,0,0.04)] border border-gray-100 hover:shadow-md transition"
+          >
+            <img
+              src="./cash-back.gif"
+              alt="Icon"
+              class="w-10 h-10 bg-gray-100 rounded"
+            />
+            <span class="font-semibold text-gray-900 text-lg">Cashbacks</span>
+          </div>
+          <div
+            class="flex items-center space-x-3 bg-white px-6 md:px-8 py-4 rounded-full shadow-[0_2px_10px_rgba(0,0,0,0.04)] border border-gray-100 hover:shadow-md transition"
+          >
+            <img
+              src="./marketplace.gif"
+              alt="Icon"
+              class="w-10 h-10 bg-gray-100 rounded"
+            />
+            <span class="font-semibold text-gray-900 text-lg">Marketplace</span>
+          </div>
+
+          <div
+            class="flex items-center space-x-3 bg-white px-6 md:px-8 py-4 rounded-full shadow-[0_2px_10px_rgba(0,0,0,0.04)] border border-gray-100 hover:shadow-md transition"
+          >
+            <img
+              src="./loan.gif"
+              alt="Icon"
+              class="w-10 h-10 bg-gray-100 rounded"
+            />
+            <span class="font-semibold text-gray-900 text-lg"
+              >Loans Management</span
+            >
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Who it is for -->
+    <section class="py-24 bg-gradient-to-b from-[#FAFAFA] to-white relative">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="text-center mb-16 max-w-3xl mx-auto">
+          <h2 class="text-[48px] font-serif font-medium mb-6">Who it is for</h2>
+          <p class="text-base text-textMuted leading-relaxed">
+            VantageCoops connects organization administrators, members, and
+            vendors under one reliable infrastructure for savings,
+            contributions, investments, wallets, loans, cashbacks, and commerce.
+          </p>
+        </div>
+
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+          <!-- Card 1 -->
+          <div
+            class="bg-white p-8 rounded-2xl shadow-[0_4px_20px_rgba(0,0,0,0.03)] border border-gray-50 flex flex-col h-full"
+          >
+            <div
+              class="mb-8 h-32 w-full rounded-xl relative overflow-hidden flex items-center justify-center"
+            >
+              <img
+                src="./coorperative.svg"
+                alt="Cooperative Societies Preview"
+                class="absolute inset-0 w-full h-full object-cover"
+              />
+            </div>
+            <h3 class="text-2xl font-semibold mb-4 text-gray-900">
+              Cooperative Societies
+            </h3>
+            <p class="text-textMuted leading-relaxed flex-grow">
+              Digitize member management, loan administration, contributions,
+              approvals, reports, wallet operations, and finance workflows.
+            </p>
+          </div>
+
+          <!-- Card 2 -->
+          <div
+            class="bg-white p-8 rounded-2xl shadow-[0_4px_20px_rgba(0,0,0,0.03)] border border-gray-50 flex flex-col h-full"
+          >
+            <div
+              class="mb-8 h-32 w-full rounded-xl relative overflow-hidden flex items-center justify-center"
+            >
+              <img
+                src="./member.svg"
+                alt="Members Preview"
+                class="absolute inset-0 w-full h-full object-cover"
+              />
+            </div>
+            <h3 class="text-2xl font-semibold mb-4 text-gray-900">Members</h3>
+            <p class="text-textMuted leading-relaxed flex-grow">
+              Give members simple access to loans, savings, investments, orders,
+              wallet activities, profile updates, and cooperative records.
+            </p>
+          </div>
+
+          <!-- Card 3 -->
+          <div
+            class="bg-white p-8 rounded-2xl shadow-[0_4px_20px_rgba(0,0,0,0.03)] border border-gray-50 flex flex-col h-full"
+          >
+            <div
+              class="mb-8 h-32 w-full rounded-xl relative overflow-hidden flex items-center justify-center"
+            >
+              <img
+                src="./vendor.svg"
+                alt="Vendors Preview"
+                class="absolute inset-0 w-full h-full object-cover"
+              />
+            </div>
+            <h3 class="text-2xl font-semibold mb-4 text-gray-900">Vendors</h3>
+            <p class="text-textMuted leading-relaxed flex-grow">
+              Help vendors sell to members, manage products, monitor orders,
+              receive updates, and track marketplace performance.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- How it works -->
+    <section class="py-24 bg-[#FAFAFA]">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="grid grid-cols-1 lg:grid-cols-2 gap-16 lg:gap-24">
+          <!-- Left side -->
+          <div class="lg:sticky lg:top-24 self-start">
+            <h2 class="text-[48px] font-serif font-medium mb-6">
+              How it works
+            </h2>
+            <p class="text-base text-textMuted leading-relaxed mb-8 max-w-md">
+              From setup to daily operations in a clear digital flow.
+              VantageCoops is designed to help cooperatives move faster without
+              losing control, accountability, or approval structure.
+            </p>
+            <button
+              class="px-8 py-3.5 gradient text-white font-medium rounded-md transition shadow-sm"
+            >
+              Get Started
+            </button>
+          </div>
+
+          <!-- Right side list -->
+          <div class="space-y-6">
+            <!-- Step 1 -->
+            <div
+              class="bg-white p-8 md:p-10 rounded-2xl shadow-[0_4px_20px_rgba(0,0,0,0.02)] border border-[#E8F1FD]"
+            >
+              <div
+                class="w-10 h-10 bg-gray-50 text-gray-700 font-semibold rounded-lg flex items-center justify-center mb-6 border border-[#E8F1FD]"
+              >
+                1
+              </div>
+              <h3 class="text-xl font-semibold mb-3 text-gray-900">
+                Set up your organization
+              </h3>
+              <p class="text-textMuted leading-relaxed">
+                Create your cooperative profile, configure basic settings,
+                assign administrators, and define how your organization
+                operates.
+              </p>
+            </div>
+
+            <!-- Step 2 -->
+            <div
+              class="bg-white p-8 md:p-10 rounded-2xl shadow-[0_4px_20px_rgba(0,0,0,0.02)] border border-[#E8F1FD]"
+            >
+              <div
+                class="w-10 h-10 bg-gray-50 text-gray-700 font-semibold rounded-lg flex items-center justify-center mb-6 border border-[#E8F1FD]"
+              >
+                2
+              </div>
+              <h3 class="text-xl font-semibold mb-3 text-gray-900">
+                Activate your modules
+              </h3>
+              <p class="text-textMuted leading-relaxed">
+                Enable the modules you need — special investment, target
+                savings, contributions, wallet system, airtime and data
+                cashbacks, marketplace, loans, reports, roles, and more.
+              </p>
+            </div>
+
+            <!-- Step 3 -->
+            <div
+              class="bg-white p-8 md:p-10 rounded-2xl shadow-[0_4px_20px_rgba(0,0,0,0.02)] border border-[#E8F1FD]"
+            >
+              <div
+                class="w-10 h-10 bg-gray-50 text-gray-700 font-semibold rounded-lg flex items-center justify-center mb-6 border border-[#E8F1FD]"
+              >
+                3
+              </div>
+              <h3 class="text-xl font-semibold mb-3 text-gray-900">
+                Onboard members and vendors
+              </h3>
+              <p class="text-textMuted leading-relaxed">
+                Invite users into dedicated portals where they can complete
+                actions without unnecessary back-and-forth.
+              </p>
+            </div>
+
+            <!-- Step 4 -->
+            <div
+              class="bg-white p-8 md:p-10 rounded-2xl shadow-[0_4px_20px_rgba(0,0,0,0.02)] border border-[#E8F1FD]"
+            >
+              <div
+                class="w-10 h-10 bg-gray-50 text-gray-700 font-semibold rounded-lg flex items-center justify-center mb-6 border border-[#E8F1FD]"
+              >
+                4
+              </div>
+              <h3 class="text-xl font-semibold mb-3 text-gray-900">
+                Track everything in real time
+              </h3>
+              <p class="text-textMuted leading-relaxed">
+                Monitor activity, approvals, money movement, performance,
+                reports, and operational health from one dashboard.
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Why VantageCoops -->
+    <section class="py-24 bg-[#FAFAFA]">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="text-center mb-16 max-w-3xl mx-auto">
+          <h2 class="text-[48px] font-serif font-medium mb-6">
+            Why VantageCoops
+          </h2>
+          <p class="text-base text-textMuted leading-relaxed">
+            Manual cooperative operations can become slow, unclear, and
+            difficult to audit. VantageCoops brings your people, processes,
+            money movement, reports, and approvals into a single organized
+            system.
+          </p>
+        </div>
+
+        <!-- Cards Grid -->
+        <div class="flex flex-wrap justify-center gap-6 max-w-6xl mx-auto">
+          <!-- Top row: 3 cards -->
+          <div
+            class="w-full md:w-[calc(33.333%-1rem)] bg-[#FAFBFC] border border-[#E8F1FD] p-8 rounded-3xl text-center flex flex-col items-center"
+          >
+            <img
+              src="increase.png"
+              alt="Icon"
+              class="w-24 h-24 rounded-xl mb-6"
+            />
+            <p class="text-gray-700 font-medium leading-relaxed">
+              Launch special investment opportunities and track member
+              participation clearly
+            </p>
+          </div>
+
+          <div
+            class="w-full md:w-[calc(33.333%-1rem)] bg-[#F8FAFC] border border-[#E8F1FD] p-8 rounded-3xl text-center flex flex-col items-center"
+          >
+            <img src="business.png" alt="Icon" class="w-24 h-24 mb-6" />
+            <p class="text-gray-700 font-medium leading-relaxed">
+              Manage investments, cooperative contributions, balances, and
+              member financial history
+            </p>
+          </div>
+
+          <div
+            class="w-full md:w-[calc(33.333%-1rem)] bg-[#F8FAFC] border border-[#E8F1FD] p-8 rounded-3xl text-center flex flex-col items-center"
+          >
+            <img src="payment.png" alt="Icon" class="w-24 h-24 mb-6" />
+            <p class="text-gray-700 font-medium leading-relaxed">
+              Operate a wallet system for payments, debits, deposits,
+              settlements, and transaction records
+            </p>
+          </div>
+
+          <!-- Bottom row: 2 cards centered -->
+          <div
+            class="w-full md:w-[calc(33.333%-1rem)] bg-[#F8FAFC] border border-[#E8F1FD] p-8 rounded-3xl text-center flex flex-col items-center"
+          >
+            <img src="lightening.png" alt="Icon" class="w-24 h-24 mb-6" />
+            <p class="text-gray-700 font-medium leading-relaxed">
+              Offer airtime and data purchases with cashback rewards for members
+            </p>
+          </div>
+
+          <div
+            class="w-full md:w-[calc(33.333%-1rem)] bg-[#F8FAFC] border border-[#E8F1FD] p-8 rounded-3xl text-center flex flex-col items-center"
+          >
+            <img
+              src="black-friday.png"
+              alt="Icon"
+              class="w-24 h-24 rounded-xl mb-6"
+            />
+            <p class="text-gray-700 font-medium leading-relaxed">
+              Power marketplace purchases through wallet, wallet plus loan, or
+              fully loan-based payment
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- FAQ -->
+    <section class="py-24 bg-white">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="text-center mb-16">
+          <h2 class="text-[48px] font-serif font-medium mb-4">
+            Frequently Asked Questions
+          </h2>
+          <p class="text-base text-textMuted">
+            Common questions about VantageCoops.
+          </p>
+        </div>
+
+        <div class="space-y-4">
+          <!-- FAQ Item 1 -->
+          <div
+            class="border border-gray-100 rounded-xl bg-white shadow-sm overflow-hidden"
+          >
+            <button
+              class="w-full px-6 py-5 flex justify-between items-center text-left focus:outline-none"
+              onclick="toggleFaq(this)"
+            >
+              <span class="font-medium text-gray-900 text-lg"
+                >Is VantageCoops only for traditional cooperative
+                societies?</span
+              >
+              <svg
+                class="w-5 h-5 text-gray-400 transform transition-transform duration-200"
+                fill="none"
+                viewBox="0 0 24 24"
+                stroke="currentColor"
+              >
+                <path
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  stroke-width="2"
+                  d="M19 9l-7 7-7-7"
+                />
+              </svg>
+            </button>
+            <div class="hidden px-6 pb-5 text-gray-600">
+              VantageCoops is designed flexibly for a variety of organizations
+              including traditional cooperatives, investment groups, savings
+              circles, and digital credit unions.
+            </div>
+          </div>
+
+          <!-- FAQ Item 2 -->
+          <div
+            class="border border-gray-100 rounded-xl bg-white shadow-sm overflow-hidden"
+          >
+            <button
+              class="w-full px-6 py-5 flex justify-between items-center text-left focus:outline-none"
+              onclick="toggleFaq(this)"
+            >
+              <span class="font-medium text-gray-900 text-lg"
+                >Can different users have different access levels?</span
+              >
+              <svg
+                class="w-5 h-5 text-gray-400 transform transition-transform duration-200"
+                fill="none"
+                viewBox="0 0 24 24"
+                stroke="currentColor"
+              >
+                <path
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  stroke-width="2"
+                  d="M19 9l-7 7-7-7"
+                />
+              </svg>
+            </button>
+            <div class="hidden px-6 pb-5 text-gray-600">
+              Yes, VantageCoops features robust role-based access control
+              allowing you to assign specific permissions to administrators,
+              financial officers, members, and vendors.
+            </div>
+          </div>
+
+          <!-- FAQ Item 3 -->
+          <div
+            class="border border-gray-100 rounded-xl bg-white shadow-sm overflow-hidden"
+          >
+            <button
+              class="w-full px-6 py-5 flex justify-between items-center text-left focus:outline-none"
+              onclick="toggleFaq(this)"
+            >
+              <span class="font-medium text-gray-900 text-lg"
+                >Can modules be activated based on what an organization
+                needs?</span
+              >
+              <svg
+                class="w-5 h-5 text-gray-400 transform transition-transform duration-200"
+                fill="none"
+                viewBox="0 0 24 24"
+                stroke="currentColor"
+              >
+                <path
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  stroke-width="2"
+                  d="M19 9l-7 7-7-7"
+                />
+              </svg>
+            </button>
+            <div class="hidden px-6 pb-5 text-gray-600">
+              Absolutely. You can turn on only the features you need right now
+              and activate others as your organization grows.
+            </div>
+          </div>
+
+          <!-- FAQ Item 4 -->
+          <div
+            class="border border-gray-100 rounded-xl bg-white shadow-sm overflow-hidden"
+          >
+            <button
+              class="w-full px-6 py-5 flex justify-between items-center text-left focus:outline-none"
+              onclick="toggleFaq(this)"
+            >
+              <span class="font-medium text-gray-900 text-lg"
+                >How can members pay in the marketplace?</span
+              >
+              <svg
+                class="w-5 h-5 text-gray-400 transform transition-transform duration-200"
+                fill="none"
+                viewBox="0 0 24 24"
+                stroke="currentColor"
+              >
+                <path
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  stroke-width="2"
+                  d="M19 9l-7 7-7-7"
+                />
+              </svg>
+            </button>
+            <div class="hidden px-6 pb-5 text-gray-600">
+              Members can pay using their wallet balance, split the cost between
+              their wallet and a loan, or take out a full loan if eligible.
+            </div>
+          </div>
+
+          <!-- FAQ Item 5 -->
+          <div
+            class="border border-gray-100 rounded-xl bg-white shadow-sm overflow-hidden"
+          >
+            <button
+              class="w-full px-6 py-5 flex justify-between items-center text-left focus:outline-none"
+              onclick="toggleFaq(this)"
+            >
+              <span class="font-medium text-gray-900 text-lg"
+                >Does the airtime and data module support cashback?</span
+              >
+              <svg
+                class="w-5 h-5 text-gray-400 transform transition-transform duration-200"
+                fill="none"
+                viewBox="0 0 24 24"
+                stroke="currentColor"
+              >
+                <path
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  stroke-width="2"
+                  d="M19 9l-7 7-7-7"
+                />
+              </svg>
+            </button>
+            <div class="hidden px-6 pb-5 text-gray-600">
+              Yes, members can earn cashback rewards automatically on their
+              airtime and data purchases depending on the cooperative's
+              configuration.
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Bottom CTA -->
+    <section class="py-12 md:py-24 bg-white relative">
+      <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div
+          class="bg-[#EEF2FF] rounded-[2.5rem] relative overflow-hidden py-16 px-8 md:py-24 text-center"
+        >
+          <!-- Floating icons: Top Left - savings.svg -->
+          <img
+            src="savings.svg"
+            alt="Savings"
+            class="hidden lg:block absolute left-10 top-10 w-36 h-36 object-contain mix-blend-multiply"
+          />
+          <!-- Floating icons: Top Right - invest.png -->
+          <img
+            src="invest.png"
+            alt="Invest"
+            class="hidden lg:block absolute right-10 top-10 w-36 h-36 object-contain mix-blend-multiply"
+          />
+          <!-- Floating icons: Bottom Left - profit.png -->
+          <img
+            src="profit.png"
+            alt="Profit"
+            class="hidden lg:block absolute left-10 bottom-10 w-36 h-36 object-contain mix-blend-multiply"
+          />
+          <!-- Floating icons: Bottom Right - investment.png -->
+          <img
+            src="investment.png"
+            alt="Investment"
+            class="hidden lg:block absolute right-10 bottom-10 w-36 h-36 object-contain mix-blend-multiply"
+          />
+
+          <div class="relative z-10 max-w-3xl mx-auto">
+            <!-- Logo in center of CTA -->
+            <img
+              src="logo.svg"
+              alt="VantageCoops Logo Small"
+              class="w-24 h-10 object-contain mx-auto mb-8"
+            />
+
+            <h2
+              class="text-[48px] font-serif font-medium text-brand mb-6 leading-tight"
+            >
+              Digitize your cooperative with VantageCoops.
+            </h2>
+            <p class="text-base text-gray-600 mb-10 leading-relaxed">
+              Manage special investment, target savings, contributions, wallet
+              payments, airtime and data cashbacks, marketplace purchases,
+              loans, approvals, reports, and administrative workflows with one
+              modern platform.
+            </p>
+
+            <div class="flex flex-wrap items-center justify-center gap-4">
+              <button
+                class="px-8 py-3.5 gradient text-white font-medium rounded-md transition shadow-sm"
+              >
+                Get Started
+              </button>
+              <button
+                onclick="openModal()"
+                class="px-8 py-3.5 bg-white border border-gray-300 text-gray-700 font-medium rounded-md hover:bg-gray-50 transition shadow-sm"
+              >
+                Book a Demo
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Footer -->
+    <footer
+      class="text-white pt-28 pb-0 px-6 sm:px-12 lg:px-16 mt-12 rounded-t-[2rem] relative overflow-hidden lg:m-8 lg:pb-9 lg:rounded-b-[2rem] mx-auto gradient"
+    >
+      <div class="relative z-10 grid grid-cols-1 md:grid-cols-12 gap-8 mb-10">
+        <!-- Left Column -->
+        <div class="md:col-span-5">
+          <div class="flex items-center space-x-3 mb-5">
+            <img
+              src="whitelogo.svg"
+              alt="VantageCoops Logo"
+              class="h-12 w-12 rounded-full object-contain"
+            />
+            <span class="text-2xl font-medium">VantageCoops</span>
+          </div>
+          <p class="text-blue-100 text-base max-w-sm mb-6 leading-relaxed">
+            One platform for savings, loans, investments,<br />and member
+            management.
+          </p>
+          <div class="flex items-center space-x-3">
+            <!-- LinkedIn -->
+            <a
+              href="#"
+              aria-label="LinkedIn"
+              class="w-9 h-9 bg-white rounded-full flex items-center justify-center text-brand hover:bg-gray-100 transition"
+            >
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                class="w-4 h-4"
+                viewBox="0 0 24 24"
+                fill="currentColor"
+              >
+                <path
+                  d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 01-2.063-2.065 2.064 2.064 0 112.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"
+                />
+              </svg>
+            </a>
+            <!-- Instagram -->
+            <a
+              href="#"
+              aria-label="Instagram"
+              class="w-9 h-9 bg-white rounded-full flex items-center justify-center text-brand hover:bg-gray-100 transition"
+            >
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                class="w-4 h-4"
+                viewBox="0 0 24 24"
+                fill="currentColor"
+              >
+                <path
+                  d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zM12 0C8.741 0 8.333.014 7.053.072 2.695.272.273 2.69.073 7.052.014 8.333 0 8.741 0 12c0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98C8.333 23.986 8.741 24 12 24c3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98C15.668.014 15.259 0 12 0zm0 5.838a6.162 6.162 0 100 12.324 6.162 6.162 0 000-12.324zM12 16a4 4 0 110-8 4 4 0 010 8zm6.406-11.845a1.44 1.44 0 100 2.881 1.44 1.44 0 000-2.881z"
+                />
+              </svg>
+            </a>
+          </div>
+        </div>
+
+        <!-- Center: Copyright (hidden on mobile, shown on md) -->
+        <div class="hidden md:flex md:col-span-2 items-end justify-center pb-2">
+          <div class="text-xs text-blue-200 text-center">
+            © 2026 — Copyright<br />All rights reserved
+          </div>
+        </div>
+
+        <!-- Company Column -->
+        <div class="md:col-span-3">
+          <h4
+            class="font-semibold mb-4 text-white text-sm uppercase tracking-wide"
+          >
+            Company
+          </h4>
+          <ul class="space-y-3 text-base text-blue-100">
+            <li>
+              <a href="#" class="hover:text-white transition">About Us</a>
+            </li>
+            <li>
+              <a href="#" class="hover:text-white transition">Privacy Policy</a>
+            </li>
+          </ul>
+        </div>
+
+        <!-- Support Column -->
+        <div class="md:col-span-2">
+          <h4
+            class="font-semibold mb-4 text-white text-sm uppercase tracking-wide"
+          >
+            Support
+          </h4>
+          <ul class="space-y-3 text-base text-blue-100">
+            <li>
+              <a href="#" class="hover:text-white transition"
+                >+234 913 1415 012</a
+              >
+            </li>
+            <li><a href="#" class="hover:text-white transition">Email</a></li>
+          </ul>
+        </div>
+      </div>
+
+      <!-- Mobile copyright -->
+      <div class="md:hidden text-center text-xs text-blue-200 mb-16">
+        © 2026 — Copyright · All rights reserved
+      </div>
+
+      <!-- Large text at footer base — 45% sinks below the container edge -->
+      <div
+        class="absolute bottom-0 left-0 w-full text-center pointer-events-none select-none"
+        style="transform: translateY(45%)"
+      >
+        <h2
+          class="text-[12vw] font-bold leading-none tracking-tighter uppercase font-sans m-0 p-0 text-white"
+          style="opacity: 0.2"
+        >
+          VANTAGECOOPS
+        </h2>
+      </div>
+    </footer>
+
+    <!-- Modal Overlay -->
+    <div
+      id="demoModal"
+      class="fixed inset-0 bg-black/40 hidden justify-end z-50 transition-opacity opacity-0 sm:p-4"
+      onclick="if (event.target === this) closeModal();"
+    >
+      <div
+        class="bg-white shadow-2xl w-full max-w-md h-full sm:rounded-2xl flex flex-col transform translate-x-full transition-transform duration-300 ease-out"
+        id="modalContent"
+      >
+        <!-- Modal Header -->
+        <div
+          class="flex items-center justify-between px-6 py-5 border-b border-gray-100"
+        >
+          <h3 class="text-xl font-medium text-gray-900">Book A Demo</h3>
+          <button
+            onclick="closeModal()"
+            class="w-8 h-8 flex items-center justify-center border border-gray-200 rounded-md text-gray-400 hover:text-gray-600 hover:bg-gray-50 transition focus:outline-none"
+          >
+            <svg
+              class="w-4 h-4"
+              fill="none"
+              viewBox="0 0 24 24"
+              stroke="currentColor"
+            >
+              <path
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                stroke-width="2"
+                d="M6 18L18 6M6 6l12 12"
+              />
+            </svg>
+          </button>
+        </div>
+
+        <!-- Modal Body -->
+        <div class="flex-1 overflow-y-auto px-6 py-6">
+          <form id="demoForm" onsubmit="submitForm(event)" class="space-y-5">
+
+            <!-- First Name + Last Name -->
+            <div class="flex gap-4">
+              <div class="flex-1">
+                <label class="block text-sm font-medium text-gray-700 mb-1.5">First Name</label>
+                <input
+                  type="text"
+                  required
+                  placeholder="John"
+                  class="w-full px-4 py-2.5 border border-gray-200 rounded-lg text-base focus:ring-1 focus:ring-brand focus:border-brand outline-none transition placeholder-gray-400"
+                />
+              </div>
+              <div class="flex-1">
+                <label class="block text-sm font-medium text-gray-700 mb-1.5">Last Name</label>
+                <input
+                  type="text"
+                  required
+                  placeholder="Doe"
+                  class="w-full px-4 py-2.5 border border-gray-200 rounded-lg text-base focus:ring-1 focus:ring-brand focus:border-brand outline-none transition placeholder-gray-400"
+                />
+              </div>
+            </div>
+
+            <!-- Email -->
+            <div>
+              <label class="block text-sm font-medium text-gray-700 mb-1.5">Email</label>
+              <input
+                type="email"
+                required
+                placeholder="john@example.com"
+                class="w-full px-4 py-2.5 border border-gray-200 rounded-lg text-base focus:ring-1 focus:ring-brand focus:border-brand outline-none transition placeholder-gray-400"
+              />
+            </div>
+
+            <!-- Phone Number -->
+            <div>
+              <label class="block text-sm font-medium text-gray-700 mb-1.5">Phone Number</label>
+              <input
+                type="tel"
+                required
+                placeholder="+234 900 000 0000"
+                class="w-full px-4 py-2.5 border border-gray-200 rounded-lg text-base focus:ring-1 focus:ring-brand focus:border-brand outline-none transition placeholder-gray-400"
+              />
+            </div>
+
+            <!-- How can we help -->
+            <div>
+              <label class="block text-sm font-medium text-gray-700 mb-1.5">How can we help?</label>
+              <textarea
+                rows="5"
+                placeholder="Tell us about your cooperative and what you need..."
+                class="w-full px-4 py-2.5 border border-gray-200 rounded-lg text-base focus:ring-1 focus:ring-brand focus:border-brand outline-none transition placeholder-gray-400 resize-none"
+              ></textarea>
+            </div>
+
+            <!-- Privacy Policy Checkbox -->
+            <div class="flex items-start gap-3">
+              <input
+                type="checkbox"
+                id="privacyCheckbox"
+                required
+                class="mt-1 w-4 h-4 accent-brand cursor-pointer flex-shrink-0"
+              />
+              <label for="privacyCheckbox" class="text-sm text-gray-600 leading-relaxed cursor-pointer">
+                I would like to confirm that I agree to the
+                <a href="#" class="text-brand underline hover:text-brandHover">Privacy Policy</a>.
+              </label>
+            </div>
+
+          </form>
+        </div>
+
+        <!-- Modal Footer -->
+        <div class="px-6 py-5 border-t border-gray-100 flex items-center justify-end space-x-3">
+          <button
+            type="button"
+            onclick="closeModal()"
+            class="px-6 py-2.5 border border-gray-200 text-gray-600 text-base font-medium rounded-lg hover:bg-gray-50 transition"
+          >
+            Cancel
+          </button>
+          <button
+            type="submit"
+            form="demoForm"
+            class="px-6 py-2.5 gradient text-white text-base font-medium rounded-lg hover:opacity-90 transition"
+          >
+            Send Message
+          </button>
+        </div>
+      </div>
+    </div>
+
+    <!-- Toast Notification -->
+    <div
+      id="successToast"
+      class="fixed bottom-6 right-6 z-[100] hidden items-center gap-3 bg-white border border-gray-100 shadow-2xl rounded-xl px-5 py-4 min-w-[280px]"
+    >
+      <div class="w-9 h-9 rounded-full gradient flex items-center justify-center flex-shrink-0">
+        <svg class="w-4 h-4 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5">
+          <path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7" />
+        </svg>
+      </div>
+      <div>
+        <p class="text-sm font-semibold text-gray-900">Message Sent!</p>
+        <p class="text-xs text-gray-500 mt-0.5">We’ll get back to you soon.</p>
+      </div>
+      <button onclick="dismissToast()" class="ml-auto text-gray-400 hover:text-gray-600 focus:outline-none">
+        <svg class="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+          <path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12" />
+        </svg>
+      </button>
+    </div>
+
+    <!-- Scripts -->
+    <script>
+      // FAQ Toggle
+      function toggleFaq(button) {
+        const content = button.nextElementSibling;
+        const icon = button.querySelector("svg");
+
+        if (content.classList.contains("hidden")) {
+          content.classList.remove("hidden");
+          icon.classList.add("rotate-180");
+        } else {
+          content.classList.add("hidden");
+          icon.classList.remove("rotate-180");
+        }
+      }
+
+      // Modal Logic
+      const modal = document.getElementById("demoModal");
+      const modalContent = document.getElementById("modalContent");
+
+      function openModal() {
+        modal.classList.remove("hidden");
+        modal.classList.add("flex");
+
+        // Trigger reflow
+        void modal.offsetWidth;
+
+        modal.classList.remove("opacity-0");
+        modalContent.classList.remove("translate-x-full");
+        modalContent.classList.add("translate-x-0");
+
+        document.body.style.overflow = "hidden"; // Prevent scrolling
+      }
+
+      function closeModal() {
+        modal.classList.add("opacity-0");
+        modalContent.classList.remove("translate-x-0");
+        modalContent.classList.add("translate-x-full");
+
+        setTimeout(() => {
+          modal.classList.add("hidden");
+          modal.classList.remove("flex");
+          document.body.style.overflow = "auto"; // Restore scrolling
+        }, 300); // Wait for transition
+      }
+
+      // Close on clicking outside
+      modal.addEventListener("click", (e) => {
+        if (e.target === modal) {
+          closeModal();
+        }
+      });
+
+      // Form Submit
+      function submitForm(e) {
+        e.preventDefault();
+        closeModal();
+        e.target.reset();
+        // Show toast
+        const toast = document.getElementById("successToast");
+        toast.classList.remove("hidden");
+        toast.classList.add("flex", "toast-enter");
+        toast.classList.remove("toast-exit");
+        // Auto dismiss after 4s
+        clearTimeout(window._toastTimer);
+        window._toastTimer = setTimeout(() => dismissToast(), 4000);
+      }
+
+      function dismissToast() {
+        const toast = document.getElementById("successToast");
+        toast.classList.add("toast-exit");
+        toast.classList.remove("toast-enter");
+        setTimeout(() => {
+          toast.classList.add("hidden");
+          toast.classList.remove("flex", "toast-exit");
+        }, 350);
+      }
+    </script>
+  </body>
+</html>
