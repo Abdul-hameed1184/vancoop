@@ -1,0 +1,708 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>VantageCoops - About Us</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Playfair+Display:wght@400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <style>
+      body {
+        font-family: Inter, sans-serif;
+      }
+      .serif {
+        font-family: "Playfair Display", serif;
+      }
+      .gradient {
+        background: linear-gradient(180deg, #4656f6 0%, #0107a3 100%);
+      }
+      .feature-marquee {
+        overflow: hidden;
+      }
+      .feature-track {
+        display: flex;
+        gap: 24px;
+        width: max-content;
+        animation: scroll 35s linear infinite;
+      }
+      @keyframes scroll {
+        from {
+          transform: translateX(0);
+        }
+        to {
+          transform: translateX(-50%);
+        }
+      }
+      .feature-card {
+        width: 180px;
+        min-width: 180px;
+        border: 1px solid #e8f1fd;
+        border-radius: 20px;
+        padding: 14px;
+        background: #fff;
+      }
+      .feature-card .img {
+  height: 120px;
+  background: #f8fafc;
+  border-radius: 12px;
+  border: 1px solid #e8f1fd;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.feature-card .img img {
+  height: 100px;
+  width: auto;
+  object-fit: contain;
+}
+      .feature-text p{
+        background: #f8fafc;
+        border-radius: 12px;
+    border: 1px solid #e8f1fd;
+      }
+      .ellipse-bg {
+        position: absolute;
+        width: min(1440px, 100%);
+        height: 396px;
+        left: 50%;
+        transform: translateX(-50%);
+        background: linear-gradient(
+          180deg,
+          rgba(70, 86, 246, 0.1) 0%,
+          rgba(1, 7, 163, 0.1) 100%
+        );
+        filter: blur(150px);
+        pointer-events: none;
+        z-index: 0;
+        border-radius: 50%;
+      }
+    </style>
+  </head>
+  <body class="bg-white">
+       <nav
+      class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-4 md:py-6 flex items-center justify-between relative z-40"
+    >
+      <div class="flex items-center">
+        <!-- Logo Image Placeholder -->
+        <img
+          src="./logo.svg"
+          alt="VantageCoops Logo"
+          class="h-10 w-auto rounded object-contain"
+        />
+      </div>
+      <div
+        class="hidden md:flex items-center space-x-8 text-base font-medium text-gray-500"
+      >
+        <a href="./index.html#features" class="hover:text-textDark transition">Features</a>
+        <a href="./index.html#for-who" class="hover:text-textDark transition">For Who?</a>
+        <a href="./index.html#how-it-works" class="hover:text-textDark transition"
+          >How it Works</a
+        >
+        <a href="./index.html#why-vantagecoops" class="hover:text-textDark transition"
+          >Why Vantage Coops</a
+        >
+        <a href="./index.html#faq" class="hover:text-textDark transition">FAQs</a>
+      </div>
+      <div class="hidden md:flex items-center space-x-4">
+        <a
+          href="./index.html#login"
+          class="inline-flex items-center justify-center px-6 py-2.5 gradient text-white text-base font-medium rounded-md hover:from-brandHover hover:to-[#3b4ccc] transition"
+        >
+          Login
+        </a>
+        <a
+          href="#"
+          class="inline-flex items-center justify-center px-6 py-2.5 border border-brand text-brand text-base font-medium rounded-md hover:bg-blue-50 transition"
+        >
+          Sign Up
+        </a>
+      </div>
+      <!-- Mobile hamburger -->
+      <button
+        id="menuToggle"
+        onclick="toggleMobileMenu()"
+        class="md:hidden flex items-center justify-center w-10 h-10 rounded-lg border border-gray-200 text-gray-600 hover:bg-gray-50 transition focus:outline-none"
+      >
+        <svg
+          id="menuIcon"
+          class="w-5 h-5"
+          fill="none"
+          viewBox="0 0 24 24"
+          stroke="currentColor"
+        >
+          <path
+            stroke-linecap="round"
+            stroke-linejoin="round"
+            stroke-width="2"
+            d="M4 6h16M4 12h16M4 18h16"
+          />
+        </svg>
+        <svg
+          id="closeIcon"
+          class="w-5 h-5 hidden"
+          fill="none"
+          viewBox="0 0 24 24"
+          stroke="currentColor"
+        >
+          <path
+            stroke-linecap="round"
+            stroke-linejoin="round"
+            stroke-width="2"
+            d="M6 18L18 6M6 6l12 12"
+          />
+        </svg>
+      </button>
+    </nav>
+
+        <div class="ellipse-bg -z-20" style="top: 200px"></div>
+    <!-- Ellipse 2: mid-page around features section -->
+    <div class="ellipse-bg -z-20" style="top: 1200px"></div>
+    <!-- Ellipse 3: lower-mid around how it works / testimonials -->
+    <div class="ellipse-bg -z-20" style="top: 2400px"></div>
+    <!-- Ellipse 4: near bottom / CTA + FAQ area -->
+    <div class="ellipse-bg -z-20" style="top: 3600px"></div>
+    <section class="text-center py-20 px-6">
+      <div
+        class="inline-block border rounded-full px-4 py-2 text-amber-600 text-sm mb-6"
+      >
+        Trusted by Cooperatives & Investment Organizations
+      </div>
+      <h1 class="serif text-5xl md:text-7xl text-blue-700 mb-6">
+        Empowering Cooperatives<br />Through Technology
+      </h1>
+      <p class="max-w-3xl mx-auto text-gray-500 mb-10">
+        VantageCoops helps cooperative societies digitize operations, strengthen
+        member engagement, manage finances efficiently and unlock sustainable
+        growth.
+      </p>
+      <div class="flex justify-center gap-4">
+        <button class="gradient text-white px-8 py-3 rounded">
+          Get Started
+        </button>
+        <button class="border border-blue-700 text-blue-700 px-8 py-3 rounded">
+          Book a Demo
+        </button>
+      </div>
+    </section>
+
+    <section class="pb-20">
+      <div class="feature-marquee">
+        <div class="feature-track">
+          <div class="feature-card">
+           <div class="img">
+  <img src="invest.png" alt="Investment">
+</div>
+            <div class="mt-3 font-semibold text-center border border-[#E8F1FD] bg-[#f8fafc] rounded-[10px] py-3">Investment</div>
+          </div>
+          <div class="feature-card">
+          <div class="img">
+  <img src="save-money.svg" alt="Savings">
+</div>
+            <div class="mt-3 font-semibold text-center border border-[#E8F1FD] bg-[#f8fafc] rounded-[10px] py-3">Savings</div>
+          </div>
+          <div class="feature-card">
+          <div class="img">
+  <img src="puzzle.svg" alt="puzzle">
+</div>
+            <div class="mt-3 font-semibold text-center border border-[#E8F1FD] bg-[#f8fafc] rounded-[10px] py-3">Contribution</div>
+          </div>
+          <div class="feature-card">
+          <div class="img">
+  <img src="exchange.svg" alt="Exchange">
+</div>
+            <div class="mt-3 font-semibold text-center border border-[#E8F1FD] bg-[#f8fafc] rounded-[10px] py-3">Wallet Sysytem</div>
+          </div>
+          <div class="feature-card">
+          <div class="img">
+  <img src="lightening.png" alt="Investment">
+</div>
+            <div class="mt-3 font-semibold text-center border border-[#E8F1FD] bg-[#f8fafc] rounded-[10px] py-3 ">Airtime & Data </div>
+          </div>
+          <div class="feature-card">
+          <div class="img">
+  <img src="cash-back.svg" alt="Cashbacks">
+</div>
+            <div class="mt-3 font-semibold text-center border border-[#E8F1FD] bg-[#f8fafc] rounded-[10px] py-3">Cashbacks</div>
+          </div>
+          <div class="feature-card">
+          <div class="img">
+  <img src="black-friday.png" alt="Investment">
+</div>
+            <div class="mt-3 font-semibold text-center border border-[#E8F1FD] bg-[#f8fafc] rounded-[10px] py-3">Marketplace</div>
+          </div>
+          <div class="feature-card">
+          <div class="img">
+  <img src="relief.svg" alt="Relief">
+</div>
+            <div class="mt-3 font-semibold text-center  border border-[#E8F1FD] bg-[#f8fafc] rounded-[10px] py-3">Loan Management</div>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+
+            <!-- Technology -->
+    <section id="for-who" class="py-10 md:py-24 relative">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="text-center mb-16 max-w-3xl mx-auto">
+          <h2 class="text-[48px] font-serif font-medium mb-6">Technology that works the way cooperatives do.</h2>
+          <p class="text-base text-textMuted leading-relaxed">
+           Cooperative organisations have always been about people, shared goals, collective savings, and mutual support. But managing these operations manually creates delays, errors, and accountability gaps that slow communities down.
+          </p>
+        </div>
+
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+          <!-- Card 1 -->
+<div
+  class="bg-white p-8 rounded-2xl shadow-[0_4px_20px_rgba(0,0,0,0.03)] border border-[#E8F1FD] flex items-center gap-5 h-full"
+>
+  <!-- Image -->
+  <div class="flex-shrink-0 flex items-center justify-center">
+    <img
+      src="./payment.svg"
+      alt="Cooperative Societies"
+      class="w-[100px] h-[100px] object-contain"
+    />
+  </div>
+
+  <!-- Content -->
+  <div class="flex flex-col flex-1">
+    <h3 class="text-2xl font-semibold mb-3 text-gray-900">
+      Cooperative Societies
+    </h3>
+
+    <p class="text-textMuted leading-relaxed">
+      Manage members, contributions, savings, loans, approvals, and reporting
+      from one platform.
+    </p>
+  </div>
+</div>
+
+<!-- Card 2 -->
+<div
+  class="bg-white p-8 rounded-2xl shadow-[0_4px_20px_rgba(0,0,0,0.03)] border border-[#E8F1FD] flex items-center gap-5 h-full"
+>
+  <!-- Image -->
+  <div class="flex-shrink-0 flex items-center justify-center">
+    <img
+      src="./portfolio.svg"
+      alt="Investment Organizations"
+      class="w-[100px] h-[100px] object-contain"
+    />
+  </div>
+
+  <!-- Content -->
+  <div class="flex flex-col flex-1">
+    <h3 class="text-2xl font-semibold mb-3 text-gray-900">
+      Investment Organizations
+    </h3>
+
+    <p class="text-textMuted leading-relaxed">
+      Launch and manage investment opportunities while maintaining visibility
+      into participation and performance.
+    </p>
+  </div>
+</div>
+         
+        </div>
+      </div>
+    </section>
+
+
+
+
+        <!-- Who it is for -->
+    <section id="for-who" class="py-10 md:py-24 relative">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="text-center mb-16 max-w-3xl mx-auto">
+          <h2 class="text-[48px] font-serif font-medium mb-6">Who We Serve.</h2>
+          <p class="text-base text-textMuted leading-relaxed">
+           VantageCoops is a modern cooperative management platform designed to help cooperative societies, investment organizations, savings groups, and member-based financial communities operate more efficiently in a digital world.
+          </p>
+        </div>
+
+        <div class="grid grid-cols-2 md:grid-cols-4 gap-8">
+          <!-- Card 1 -->
+          <div
+            class="bg-white p-8 rounded-2xl shadow-[0_4px_20px_rgba(0,0,0,0.03)] border border-[#E8F1FD] flex flex-col h-full"
+          >
+            <div
+              class="mb-8 h-32 w-full flex items-center justify-left"
+            >
+              <img
+                src="./payment.svg"
+                alt="cooperative societies preview"
+                class="w-auto h-25 object-cover"
+              />
+            </div>
+            <h3 class="text-2xl font-semibold mb-4 text-gray-900">
+              Cooperative Societies
+            </h3>
+            <p class="text-textMuted leading-relaxed flex-grow">
+             Manage members, contributions, savings, loans, approvals, and reporting from one platform.
+            </p>
+          </div>
+
+          <!-- Card 2 -->
+          <div
+            class="bg-white p-8 rounded-2xl shadow-[0_4px_20px_rgba(0,0,0,0.03)] border border-[#E8F1FD] flex flex-col h-full"
+          >
+            <div
+              class="mb-8 h-32 w-full flex items-center justify-left"
+            >
+              <img
+                src="./portfolio.svg"
+                alt="Members Preview"
+                class="w-auto h-25 object-cover"
+              />
+            </div>
+            <h3 class="text-2xl font-semibold mb-4 text-gray-900">Members</h3>
+            <p class="text-textMuted leading-relaxed flex-grow">
+           Launch and manage investment opportunities while maintaining visibility into participation and performance.
+            </p>
+          </div>
+          <!-- Card 2 -->
+          <div
+            class="bg-white p-8 rounded-2xl shadow-[0_4px_20px_rgba(0,0,0,0.03)] border border-[#E8F1FD] flex flex-col h-full"
+          >
+            <div
+              class="mb-8 h-32 w-full flex items-center justify-left"
+            >
+              <img
+                src="./money.svg"
+                alt="Members Preview"
+                class="w-auto h-25 object-cover"
+              />
+            </div>
+            <h3 class="text-2xl font-semibold mb-4 text-gray-900">Members</h3>
+            <p class="text-textMuted leading-relaxed flex-grow">
+           Digitize savings operations and improve member engagement through secure self-service access.
+            </p>
+          </div>
+
+          <!-- Card 3 -->
+          <div
+            class="bg-white p-8 rounded-2xl shadow-[0_4px_20px_rgba(0,0,0,0.03)] border border-[#E8F1FD] flex flex-col h-full"
+          >
+             <div
+              class="mb-8 h-32 w-full flex items-center justify-left"
+            >
+              <img
+                src="./shopping.svg"
+                alt="Vendors Preview"
+                class="w-auto h-25 object-cover"
+              />
+            </div>
+            <h3 class="text-2xl font-semibold mb-4 text-gray-900">Vendors</h3>
+            <p class="text-textMuted leading-relaxed flex-grow">
+             Connect directly with cooperative members through an integrated marketplace ecosystem.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="how-it-works" class="py-10 md:py-24">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="grid grid-cols-1 lg:grid-cols-2 gap-16 lg:gap-24">
+          <!-- Left side -->
+          <div class="lg:sticky lg:top-24 self-start">
+            <h2 class="text-[48px] font-serif font-medium mb-6">
+             Why Organizations Choose VantageCoops
+            </h2>
+            <p class="text-base text-textMuted leading-relaxed mb-8 max-w-md">
+             Cooperative organisations have long relied on spreadsheets, paper records, and manual follow-ups to manage complex financial operations. We saw an opportunity to build something better
+            </p>
+            <button
+              class="px-8 py-3.5 gradient text-white font-medium rounded-md transition shadow-sm"
+            >
+              Get Started
+            </button>
+          </div>
+
+          <!-- Right side list -->
+          <div class="space-y-6">
+            <!-- Step 1 -->
+            <div
+              class="bg-white p-8 md:p-10 rounded-2xl shadow-[0_4px_20px_rgba(0,0,0,0.02)] border border-[#E8F1FD] z-10"
+            >
+              <div
+                class="gradient text-white w-10 h-10 bg-gray-50 text-gray-700 font-semibold rounded-lg flex items-center justify-center mb-6 border border-[#E8F1FD]"
+              >
+                1
+              </div>
+              <h3 class="text-xl font-semibold mb-3 text-gray-900">
+                Simplified Operations
+              </h3>
+              <p class="text-textMuted leading-relaxed">
+               Reduce manual work and eliminate fragmented systems.
+              </p>
+            </div>
+
+            <!-- Step 2 -->
+            <div
+              class="bg-white p-8 md:p-10 rounded-2xl shadow-[0_4px_20px_rgba(0,0,0,0.02)] border border-[#E8F1FD]"
+            >
+              <div
+                class="gradient text-white w-10 h-10 bg-gray-50 text-gray-700 font-semibold rounded-lg flex items-center justify-center mb-6 border border-[#E8F1FD]"
+              >
+                2
+              </div>
+              <h3 class="text-xl font-semibold mb-3 text-gray-900">
+                Greater Transparency
+              </h3>
+              <p class="text-textMuted leading-relaxed">
+               Track financial activities, approvals, and member interactions with confidence.
+              </p>
+            </div>
+
+            <!-- Step 3 -->
+            <div
+              class="bg-white p-8 md:p-10 rounded-2xl shadow-[0_4px_20px_rgba(0,0,0,0.02)] border border-[#E8F1FD]"
+            >
+              <div
+                class="gradient text-white w-10 h-10 bg-gray-50 text-gray-700 font-semibold rounded-lg flex items-center justify-center mb-6 border border-[#E8F1FD]"
+              >
+                3
+              </div>
+              <h3 class="text-xl font-semibold mb-3 text-gray-900">
+                Better Member Experience
+              </h3>
+              <p class="text-textMuted leading-relaxed">
+               Provide members with convenient access to savings, loans, investments, wallets, and marketplace services.
+              </p>
+            </div>
+
+            <!-- Step 4 -->
+            <div
+              class="bg-white p-8 md:p-10 rounded-2xl shadow-[0_4px_20px_rgba(0,0,0,0.02)] border border-[#E8F1FD]"
+            >
+              <div
+                class="gradient text-white w-10 h-10 bg-gray-50 text-gray-700 font-semibold rounded-lg flex items-center justify-center mb-6 border border-[#E8F1FD]"
+              >
+                4
+              </div> 
+              <h3 class="text-xl font-semibold mb-3 text-gray-900">
+                Scalable Infrastructure
+              </h3>
+              <p class="text-textMuted leading-relaxed">
+               Support organisational growth without increasing administrative complexity.
+              </p>
+            </div>
+            <div
+              class="bg-white p-8 md:p-10 rounded-2xl shadow-[0_4px_20px_rgba(0,0,0,0.02)] border border-[#E8F1FD]"
+            >
+              <div
+                class="gradient text-white w-10 h-10 bg-gray-50 text-gray-700 font-semibold rounded-lg flex items-center justify-center mb-6 border border-[#E8F1FD]"
+              >
+                5
+              </div>
+              <h3 class="text-xl font-semibold mb-3 text-gray-900">
+                Secure & Reliable
+              </h3>
+              <p class="text-textMuted leading-relaxed">
+              Built with modern technology designed for performance, reliability, and data security.
+              </p>
+            </div>
+          </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Bottom CTA -->
+    <section class="py-12 md:py-24 bg-white relative">
+      <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div
+          class="bg-[#EEF2FF] rounded-[2.5rem] relative overflow-hidden py-16 px-8 md:py-24 text-center"
+        >
+          <!-- Floating icons: Top Left - savings.svg -->
+          <img
+            src="savings.svg"
+            alt="Savings"
+            class="hidden lg:block absolute left-10 top-10 w-36 h-36 object-contain mix-blend-multiply"
+          />
+          <!-- Floating icons: Top Right - invest.png -->
+          <img
+            src="invest.png"
+            alt="Invest"
+            class="hidden lg:block absolute right-10 top-10 w-36 h-36 object-contain mix-blend-multiply"
+          />
+          <!-- Floating icons: Bottom Left - profit.png -->
+          <img
+            src="profit.png"
+            alt="Profit"
+            class="hidden lg:block absolute left-10 bottom-10 w-36 h-36 object-contain mix-blend-multiply"
+          />
+          <!-- Floating icons: Bottom Right - investment.png -->
+          <img
+            src="investment.png"
+            alt="Investment"
+            class="hidden lg:block absolute right-10 bottom-10 w-36 h-36 object-contain mix-blend-multiply"
+          />
+
+          <div class="relative z-10 max-w-3xl mx-auto">
+            <!-- Logo in center of CTA -->
+            <img
+              src="logo.svg"
+              alt="VantageCoops Logo Small"
+              class="w-24 h-10 object-contain mx-auto mb-8"
+            />
+
+            <h2
+              class="text-[48px] font-serif font-medium text-brand mb-6 leading-tight"
+            >
+              Digitize your cooperative with VantageCoops.
+            </h2>
+            <p class="text-base text-gray-600 mb-10 leading-relaxed">
+              Manage special investment, target savings, contributions, wallet
+              payments, airtime and data cashbacks, marketplace purchases,
+              loans, approvals, reports, and administrative workflows with one
+              modern platform.
+            </p>
+
+            <div class="flex flex-wrap items-center justify-center gap-4">
+              <button
+                class="px-8 py-3.5 gradient text-white font-medium rounded-md transition shadow-sm"
+              >
+                Get Started
+              </button>
+              <button
+                onclick="openModal()"
+                class="px-8 py-3.5 bg-white border border-gray-300 text-gray-700 font-medium rounded-md hover:bg-gray-50 transition shadow-sm"
+              >
+                Book a Demo
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Footer -->
+    <footer
+      class="text-white pt-10 md:pt-28 pb-0 px-6 sm:px-12 lg:px-16 mt-12 rounded-t-[2rem] relative overflow-hidden lg:m-8 lg:pb-9 lg:rounded-b-[2rem] mx-auto gradient"
+    >
+      <div class="relative z-10 grid grid-cols-1 md:grid-cols-12 gap-8 mb-10">
+        <!-- Left Column -->
+        <div class="md:col-span-5">
+          <div class="flex items-center space-x-3 mb-5">
+            <img
+              src="whitelogo.svg"
+              alt="VantageCoops Logo"
+              class="h-12 w-12 rounded-full object-contain"
+            />
+            <span class="text-2xl font-medium">VantageCoops</span>
+          </div>
+          <p class="text-blue-100 text-base max-w-sm mb-6 leading-relaxed">
+            One platform for savings, loans, investments,<br />and member
+            management.
+          </p>
+          <div class="flex items-center space-x-3">
+            <!-- LinkedIn -->
+            <a
+              href="#"
+              aria-label="LinkedIn"
+              class="w-9 h-9 bg-white rounded-full flex items-center justify-center text-brand hover:bg-gray-100 transition"
+            >
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                class="w-4 h-4"
+                viewBox="0 0 24 24"
+                fill="currentColor"
+              >
+                <path
+                  d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 01-2.063-2.065 2.064 2.064 0 112.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"
+                />
+              </svg>
+            </a>
+            <!-- Instagram -->
+            <a
+              href="#"
+              aria-label="Instagram"
+              class="w-9 h-9 bg-white rounded-full flex items-center justify-center text-brand hover:bg-gray-100 transition"
+            >
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                class="w-4 h-4"
+                viewBox="0 0 24 24"
+                fill="currentColor"
+              >
+                <path
+                  d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zM12 0C8.741 0 8.333.014 7.053.072 2.695.272.273 2.69.073 7.052.014 8.333 0 8.741 0 12c0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98C8.333 23.986 8.741 24 12 24c3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98C15.668.014 15.259 0 12 0zm0 5.838a6.162 6.162 0 100 12.324 6.162 6.162 0 000-12.324zM12 16a4 4 0 110-8 4 4 0 010 8zm6.406-11.845a1.44 1.44 0 100 2.881 1.44 1.44 0 000-2.881z"
+                />
+              </svg>
+            </a>
+          </div>
+        </div>
+
+        <!-- Center: Copyright (hidden on mobile, shown on md) -->
+        <div class="hidden md:flex md:col-span-2 items-end justify-center pb-2">
+          <div class="text-xs text-blue-200 text-center">
+            © 2026 — Copyright<br />All rights reserved
+          </div>
+        </div>
+
+        <!-- Company Column -->
+        <div class="md:col-span-3">
+          <h4
+            class="font-semibold mb-4 text-white text-sm uppercase tracking-wide"
+          >
+            Company
+          </h4>
+          <ul class="space-y-3 text-base text-blue-100">
+            <li>
+              <a href="#" class="hover:text-white transition">About Us</a>
+            </li>
+            <li>
+              <a href="#" class="hover:text-white transition">Privacy Policy</a>
+            </li>
+          </ul>
+        </div>
+
+        <!-- Support Column -->
+        <div class="md:col-span-2">
+          <h4
+            class="font-semibold mb-4 text-white text-sm uppercase tracking-wide"
+          >
+            Support
+          </h4>
+          <ul class="space-y-3 text-base text-blue-100">
+            <li>
+              <a href="#" class="hover:text-white transition"
+                >+234 913 1415 012</a
+              >
+            </li>
+            <li><a href="#" class="hover:text-white transition">Email</a></li>
+          </ul>
+        </div>
+      </div>
+
+      <!-- Mobile copyright -->
+      <div class="md:hidden text-center text-xs text-blue-200 mb-16">
+        © 2026 — Copyright · All rights reserved
+      </div>
+
+      <!-- Large text at footer base — 45% sinks below the container edge -->
+      <div
+        class="absolute bottom-0 left-0 w-full text-center pointer-events-none select-none"
+        style="transform: translateY(45%)"
+      >
+        <h2
+          class="text-[12vw] font-bold leading-none tracking-tighter uppercase font-sans m-0 p-0 text-white"
+          style="opacity: 0.2"
+        >
+          VANTAGECOOPS
+        </h2>
+      </div>
+    </footer>
+  </body>
+</html>
